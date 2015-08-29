@@ -5,11 +5,9 @@
 
 /**
  *
- * Separamos la función main de la clase
+ * Utilizamos módulos para identificar de forma inequívoca nuestras clases
  *
- * Para referirnos a la clase Ball utilizamos (sólo a nivel de TS) /// <reference ....
- *
- * Tendríamos que añadir todos los js (t en orden) en el html
+ *  [MODULOS INTERNOS]
  *
  */
 
@@ -25,11 +23,9 @@ canvas.id = 'canvas';
 document.body.appendChild(canvas);
 
 
-
-
 for (var i:number = 0; i < 1500 ; i++) {
-    var c1:Ball;
-    c1 = new Ball(canvas);
+    var c1:learn.a73.figures.Ball;
+    c1 = new learn.a73.figures.Ball(canvas);
     c1.setPos(Math.random()*canvas.clientWidth, Math.random()*canvas.clientHeight,Math.random()*10+5,'#ff0000',null,null,0.25);
 }
 

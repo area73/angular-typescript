@@ -13,8 +13,12 @@ TAG [pr02]
 
 TAG [pr03]
 ----------
+[pr03a]
 * Separamos la clase y el main en archivos 
-
+[pr03b]
+* Módulos internos
+[pr03c]
+* Módulos externos
 
 
 TAG [pro04]
