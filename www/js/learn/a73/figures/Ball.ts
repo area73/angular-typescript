@@ -1,33 +1,8 @@
 /**
- * Created by rerades on 12/8/15.
+ * Created by rerades on 30/8/15.
  */
 
 
-
-/**
- * @description
- * Archivo donde definimos las clases y la funcionalidad
- *
- * @learn
- * Vamos a ver la estructura de las clases y como instanciarlas
- */
-
-
-/**
- * @description
- * Clase Ball
- *
- * @learn
- * 1) definición de la clase
- * 2) Constructor --> probar con un alert
- * 3) instanciar una clase
- * 4) probar a pasar parámetros al constructor
- * 5) crear variables de clase
- * 6) crear métodos
- * 7) explicar métodos publicos / privados hacer demo y mosrar error en TS y no JS
- * 8) ES5 crear setters y getters con accesor (get radius())  (se necesita ES5  (compilador --> /usr/local/lib/node_modules/typescript/bin))
- * 8) añadir al DOM
- */
 
 class Ball {
 
@@ -57,7 +32,6 @@ class Ball {
     }
 
 
-
     public get radius():number {
         return this._radius;
     }
@@ -80,6 +54,7 @@ class Ball {
     public get y():number {
         return this._y;
     }
+
 
     public set y(value:number) {
         this._SVGCircle.cy.baseVal.value = value;
@@ -135,30 +110,3 @@ class Ball {
         this._alpha = value;
     }
 }
-
-
-var canvas:SVGElement = <SVGElement>document.createElementNS("http://www.w3.org/2000/svg", "svg");
-canvas.id = 'canvas';
-document.body.appendChild(canvas);
-
-
-var c1:Ball = new Ball(canvas);
-c1.setPos(100,100);
-c1.radius = (Math.random()*10)+5;
-// c1.x = 22;
-c1.color = '0xff0000';
-c1.borderWidth = 3;
-c1.borderColor = '#000';
-c1.borderWidth = 2;
-
-// c1.addToStage('artboard');
-//c1.setPos(100,100);
-
-
-for (var i:number = 0; i < 1500 ; i++) {
-    var c1:Ball = new Ball(canvas);
-    c1.setPos(Math.random()*canvas.clientWidth, Math.random()*canvas.clientHeight,Math.random()*10+5,'#ff0000',null,null,0.25);
-}
-
-
-
