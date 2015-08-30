@@ -9,6 +9,8 @@
  *
  *  [MODULOS INTERNOS]
  *
+ *  HAy que referir los js de cada fichero en el HTML
+ *
  */
 
 

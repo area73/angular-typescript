@@ -32,6 +32,8 @@ module learn.a73.figures {
         }
 
 
+
+
         public get radius():number {
             return this._radius;
         }
@@ -56,6 +58,7 @@ module learn.a73.figures {
         }
 
 
+
         public set y(value:number) {
             this._SVGCircle.cy.baseVal.value = value;
             this._y = value;
@@ -68,6 +71,7 @@ module learn.a73.figures {
         public set SVGCircle(value:SVGCircleElement) {
             this._SVGCircle = value;
         }
+
 
 
         public get color():string {
