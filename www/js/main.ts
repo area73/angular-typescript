@@ -9,7 +9,7 @@
  *
  * Para referirnos a la clase Ball utilizamos (sólo a nivel de TS) /// <reference ....
  *
- * Tendríamos que añadir todos los js (t en orden) en el html
+ * Tendríamos que añadir todos los js (en orden) en el html
  *
  */
 
