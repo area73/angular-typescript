@@ -18,7 +18,7 @@ TAG [pr03]
 [pr03b]
 * Módulos internos
 [pr03c]
-* Módulos externos
+* Módulos externos  (utilizamos --module system)
 
 
 TAG [pro04]
