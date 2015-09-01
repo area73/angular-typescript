@@ -2,8 +2,23 @@
  * Created by rerades on 30/8/15.
  */
 
-module learn.a73.figures {
 
+/**
+ * No necesitamos module porque estará determinado por la ruta y el nombre del archivo
+ * // module learn.a73.figures {
+ *
+ *  // si exportamos la clase el problema que tenemos es que
+    // para instanciarla tendrmeos que hacer algo parecido a m:Ball.Ball = new Ball.Ball()
+    // para solucionar esto ponemos el export al final del archivo y no a la clase
+
+
+
+
+ */
+
+
+    // truco:: no hacer el export de la clase aquí sino al final del archivo  (con --module system no funciona)
+    //export class Ball {
     export class Ball {
 
         private _radius:number = 10;
@@ -33,7 +48,6 @@ module learn.a73.figures {
 
 
 
-
         public get radius():number {
             return this._radius;
         }
@@ -58,7 +72,6 @@ module learn.a73.figures {
         }
 
 
-
         public set y(value:number) {
             this._SVGCircle.cy.baseVal.value = value;
             this._y = value;
@@ -73,16 +86,13 @@ module learn.a73.figures {
         }
 
 
-
         public get color():string {
             return this._color;
         }
 
         public set color(value:string) {
             // this.SVGCircle.setAttribute('fill', value);
-
             this.SVGCircle.style.fill = value;
-
             this._color = value;
         }
 
@@ -115,4 +125,8 @@ module learn.a73.figures {
         }
     }
 
-}
+    // export = Ball;
+
+
+
+

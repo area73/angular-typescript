@@ -7,8 +7,19 @@
 </head>
 <body>
 
-<script src="js/learn/a73/figures/Ball.js"></script>
-<script src="js/main.js"></script>
+<script src="js/system.js"></script>
+<script>
+    System.defaultJSExtensions = true;
+    // set our baseURL reference path
+    System.config({
+        baseURL: './js'
+    });
+
+    // loads /js/main.js
+    System.import('main.js').then(function(m) {
+        console.log("aplicación cargada")
+    });
+</script>
 
 </body>
 </html>
