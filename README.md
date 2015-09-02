@@ -29,6 +29,7 @@ TAG [pro04]
 
 
 
+
 // TODO
 Compiling With tsc
 Once you have your definition files, and the compiler, you can run it against your application folder. There are several options we need to pass into the compiler, so instead of doing that on the commandline, TypeScript 1.5 allows us to create a special file called tsconfig.json where it will read the compiler options from.
