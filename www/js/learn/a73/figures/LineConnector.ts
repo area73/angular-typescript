@@ -54,8 +54,6 @@ export class LineConnector {
 
 
 
-
-
     public get b1():Ball {
         return this._b1;
     }
