@@ -30,7 +30,7 @@ creamos triangulo , rectángulo y un interface IFigure
 
 
 [pr04b]
-herencia creamos padre
+herencia creamos padre 
 
 
 
