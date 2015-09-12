@@ -5,17 +5,20 @@
 /// <reference path="./Ball.ts" />
 
 
-import figure = require('./Ball');
+
+
+import interfaceFigure = require('./IFigure');
 
 // alias
-import Ball = figure.Ball;
+import IFigure = interfaceFigure.IFigure;
 
 export class LineConnector {
 
 
     private _SVGLine:SVGLineElement;
+    private _color:string;
 
-    constructor(private _b1:Ball, private _b2:Ball) {
+    constructor(private _b1:IFigure, private _b2:IFigure) {
         this.createLine();
         this.linkLine();
         this.startWatch();
@@ -28,7 +31,8 @@ export class LineConnector {
         this._SVGLine = <SVGLineElement>document.createElementNS(canvasNS, 'line');
         this.b1.canvas.appendChild(this._SVGLine);
         this.SVGLine.style.strokeWidth = '1';
-        this.SVGLine.style.stroke = '#666666';
+        this.color = '#666666'
+
 
     }
 
@@ -41,7 +45,6 @@ export class LineConnector {
         this.SVGLine.y1.baseVal.value = <any>this.b1.y;
         this.SVGLine.x2.baseVal.value = <any>this.b2.x;
         this.SVGLine.y2.baseVal.value = <any>this.b2.y;
-        // console.log(this.SVGLine.x1.baseVal.value)
     }
 
 
@@ -54,20 +57,20 @@ export class LineConnector {
 
 
 
-    public get b1():Ball {
+    public get b1():IFigure {
         return this._b1;
     }
 
-    public set b1(value:Ball) {
+    public set b1(value:IFigure) {
         this._b1 = value;
     }
 
 
-    public get b2():Ball {
+    public get b2():IFigure {
         return this._b2;
     }
 
-    public set b2(value:Ball) {
+    public set b2(value:IFigure) {
         this._b2 = value;
     }
 
@@ -78,5 +81,15 @@ export class LineConnector {
 
     public set SVGLine(value:SVGLineElement) {
         this._SVGLine = value;
+    }
+
+
+    public get color():string {
+        return this._color;
+    }
+
+    public set color(value:string) {
+        this._SVGLine.style.stroke = value;
+        this._color = value;
     }
 }

@@ -16,7 +16,12 @@
 
     // truco:: no hacer el export de la clase aquí sino al final del archivo  (con --module system no funciona)
     //export class Ball {
-export class Ball {
+
+import graphics = require('./IFigure');
+
+
+
+export class Ball implements graphics.IFigure {
 
     private _radius:number = 10;
     private _x:number = 100;
@@ -29,6 +34,11 @@ export class Ball {
     private _canvas:SVGElement;
     private _speedX:number;
     private _speedY:number;
+    private _width:number;
+    private _height:number;
+
+
+
 
     constructor(canvas:SVGElement) {
         this._canvas = canvas;
@@ -37,14 +47,15 @@ export class Ball {
         canvas.appendChild(this._SVGCircle);
     }
 
-    public setPos(x:number, y:number, r:number = 10, color:string = '#ff0', borderWidth:number = 1, borderColor:string = '#aaa', alpha:number = 1):void {
+
+    public setPos(x:number, y:number):void {
         this.x = x;
         this.y = y;
+    }
+
+
+    public setSize(r:number):void {
         this.radius = r;
-        this.color = color;
-        this.borderColor = borderColor;
-        this.borderWidth = borderWidth;
-        this.alpha = alpha;
     }
 
 
@@ -74,9 +85,14 @@ export class Ball {
 
 
     private checkBounce():void {
-        this.speedX = (this.x > this._canvas.clientWidth || this.x < 0) ? this.speedX * -1 : this.speedX  ;
-        this.speedY = (this.y > this._canvas.clientHeight || this.y < 0 ) ? this.speedY * -1 : this.speedY  ;
-}
+        this.speedX = (this.x + this.radius / 2 > this._canvas.clientWidth) ?  - Math.abs(this.speedX) : (this.x - this.radius / 2  < 0) ?  Math.abs(this.speedX) : this.speedX  ;
+        this.speedY = (this.y + this.radius / 2 > this._canvas.clientHeight) ? - Math.abs(this.speedY) : (this.y - this.radius / 2  < 0) ?  Math.abs(this.speedY) : this.speedY ;
+    }
+
+
+    // ------------------------------------------------------------------------------------------------------------
+    // -- SETTERS y GETTERS
+    // ------------------------------------------------------------------------------------------------------------
 
     public get radius():number {
         return this._radius;
@@ -179,9 +195,26 @@ export class Ball {
     public set speedY(value:number) {
         this._speedY = value;
     }
+
+
+    public get width():number {
+        return this._width;
+    }
+
+    public set width(value:number) {
+        this._width = value;
+    }
+
+    public get height():number {
+        return this._height;
+    }
+
+    public set height(value:number) {
+        this._height = value;
+    }
 }
 
-// export = Ball;
+
 
 
 

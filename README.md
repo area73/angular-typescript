@@ -21,10 +21,16 @@ TAG [pr03]
 * Módulos externos  (utilizamos --module system)
 
 
-TAG [pro04]
+TAG [pr04]
 -----------
 * creamos la clase  connector y las instanciamos
 
+[pr04a]
+creamos triangulo , rectángulo y un interface IFigure
+
+
+[pr04b]
+herencia creamos padre
 
 
 
