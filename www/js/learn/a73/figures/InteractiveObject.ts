@@ -77,8 +77,10 @@ export class InteractiveObject implements IFigure {
 
     // todo: --> protected
     protected checkBounce():void {
-        this.speedX = (this._x + this._rightLimit > this._canvas.clientWidth) ?  - Math.abs(this.speedX) : (this._x - this._leftLimit  < 0) ?  Math.abs(this.speedX) : this.speedX  ;
-        this.speedY = (this._y + this._bottomLimit  > this._canvas.clientHeight) ? - Math.abs(this.speedY) : (this._y - this._topLimit  < 0) ?  Math.abs(this.speedY) : this.speedY ;
+        this.speedX = (this._x + this._rightLimit > this._canvas.clientWidth) ?  - Math.abs(this.speedX) :
+            (this._x - this._leftLimit  < 0) ?  Math.abs(this.speedX) : this.speedX  ;
+        this.speedY = (this._y + this._bottomLimit  > this._canvas.clientHeight) ? - Math.abs(this.speedY) :
+            (this._y - this._topLimit  < 0) ?  Math.abs(this.speedY) : this.speedY ;
     }
 
 
