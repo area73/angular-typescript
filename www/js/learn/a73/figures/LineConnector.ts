@@ -6,17 +6,17 @@
 
 
 
+import {IFigure} from './IFigure';
 
-import interfaceFigure = require('./IFigure');
 
-// alias
-import IFigure = interfaceFigure.IFigure;
+
 
 export class LineConnector {
 
 
     private _SVGLine:SVGLineElement;
     private _color:string;
+    private _refreshTime:number = 30;
 
     constructor(private _b1:IFigure, private _b2:IFigure) {
         this.createLine();
@@ -41,10 +41,10 @@ export class LineConnector {
     }
 
     private linkNodes() {
-        this.SVGLine.x1.baseVal.value = <any>this.b1.x;
-        this.SVGLine.y1.baseVal.value = <any>this.b1.y;
-        this.SVGLine.x2.baseVal.value = <any>this.b2.x;
-        this.SVGLine.y2.baseVal.value = <any>this.b2.y;
+        this.SVGLine.x1.baseVal.value = <any>this.b1.centX;
+        this.SVGLine.y1.baseVal.value = <any>this.b1.centY;
+        this.SVGLine.x2.baseVal.value = <any>this.b2.centX;
+        this.SVGLine.y2.baseVal.value = <any>this.b2.centY;
     }
 
 
@@ -52,7 +52,7 @@ export class LineConnector {
         setInterval(
             () => {
                 this.linkNodes();
-            },30)
+            },this._refreshTime)
     }
 
 

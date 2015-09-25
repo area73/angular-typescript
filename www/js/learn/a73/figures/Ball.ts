@@ -13,205 +13,87 @@
  *
  */
 
+import {InteractiveObject} from './InteractiveObject';
 
-    // truco:: no hacer el export de la clase aquí sino al final del archivo  (con --module system no funciona)
-    //export class Ball {
-
-import graphics = require('./IFigure');
-
-
-
-export class Ball implements graphics.IFigure {
-
-    private _radius:number = 10;
-    private _x:number = 100;
-    private _y:number = 100;
-    private _SVGCircle:SVGCircleElement;
-    private _color:string;
-    private _borderWidth:number;
-    private _borderColor:string;
-    private _alpha:number;
-    private _canvas:SVGElement;
-    private _speedX:number;
-    private _speedY:number;
-    private _width:number;
-    private _height:number;
-
+export class Ball extends InteractiveObject {
 
 
 
     constructor(canvas:SVGElement) {
-        this._canvas = canvas;
-        var canvasNS = canvas.namespaceURI;
-        this._SVGCircle = <SVGCircleElement>document.createElementNS(canvasNS, 'circle');
-        canvas.appendChild(this._SVGCircle);
-    }
-
-
-    public setPos(x:number, y:number):void {
-        this.x = x;
-        this.y = y;
+        super (canvas, 'circle');
     }
 
 
     public setSize(r:number):void {
-        this.radius = r;
+        super.setSize(r,r);
+
     }
 
 
-    public move(speedX:number, speedY:number){
-        this._speedX = speedX;
-        this._speedY = speedY;
-        this.startToMove();
+    protected setLimits():void {
+        // TODO:: triple igualdad
+        this._leftLimit = this._rightLimit = this._width/2;
+        this._topLimit = this._bottomLimit = this._height/2;
+        // this._leftLimit = this._width/2;
+        // this._topLimit = this._height/2;
+
     }
 
-    private startToMove():void {
-        /*
-        setInterval(
-            function(){
-            console.log(this._x)
-        }, 100)
-        */
-
-        setInterval(
-            () => {
-                // console.log(this._x)
-                this.checkBounce();
-                this.x = this.x + this.speedX;
-                this.y = this.y + this.speedY;
-
-            }, 30)
-    }
-
-
+/*
     private checkBounce():void {
-        this.speedX = (this.x + this.radius / 2 > this._canvas.clientWidth) ?  - Math.abs(this.speedX) : (this.x - this.radius / 2  < 0) ?  Math.abs(this.speedX) : this.speedX  ;
-        this.speedY = (this.y + this.radius / 2 > this._canvas.clientHeight) ? - Math.abs(this.speedY) : (this.y - this.radius / 2  < 0) ?  Math.abs(this.speedY) : this.speedY ;
+        this.speedX = (this.x + this.radius / 2 > this._canvas.clientWidth) ? -Math.abs(this.speedX) :
+            (this.x - this.radius / 2 < 0) ? Math.abs(this.speedX) : this.speedX;
+        this.speedY = (this.y + this.radius / 2 > this._canvas.clientHeight) ? -Math.abs(this.speedY) :
+            (this.y - this.radius / 2 < 0) ? Math.abs(this.speedY) : this.speedY;
     }
-
+*/
 
     // ------------------------------------------------------------------------------------------------------------
     // -- SETTERS y GETTERS
     // ------------------------------------------------------------------------------------------------------------
 
-    public get radius():number {
-        return this._radius;
-    }
-
-    public set radius(value:number) {
-        this.SVGCircle.r.baseVal.value = value;
-        this._radius = value;
-    }
 
 
-    public get x():number {
-        return this._SVGCircle.cx.baseVal.value;
+    public set height(value:number) {
+        (<SVGCircleElement>this.SVGElement).r.baseVal.value = value;
+        this._height = value;
     }
+
 
     public set x(value:number) {
-        this._SVGCircle.cx.baseVal.value = value;
+        (<SVGCircleElement>this.SVGElement).cx.baseVal.value = value;
         this._x = value;
-    }
-
-    public get y():number {
-        return this._SVGCircle.cy.baseVal.value;
     }
 
 
     public set y(value:number) {
-        this._SVGCircle.cy.baseVal.value = value;
+        (<SVGCircleElement>this.SVGElement).cy.baseVal.value = value;
         this._y = value;
     }
 
-    public get SVGCircle():SVGCircleElement {
-        return this._SVGCircle;
-    }
-
-    public set SVGCircle(value:SVGCircleElement) {
-        this._SVGCircle = value;
-    }
-
-
-    public get color():string {
-        return this._color;
-    }
-
     public set color(value:string) {
-        // this.SVGCircle.setAttribute('fill', value);
-        this.SVGCircle.style.fill = value;
-        this._color = value;
+        (<SVGCircleElement>this.SVGElement).style.fill = value;
     }
 
-    public get borderWidth():number {
-        return this._borderWidth;
-    }
+      public set borderWidth(value:number) {
+        (<SVGCircleElement>this.SVGElement).style.strokeWidth = <string><any>value;
+      }
 
-    public set borderWidth(value:number) {
-        this.SVGCircle.style.strokeWidth = <string><any>value;
-        this._borderWidth = value;
-    }
-
-    public get borderColor():string {
-        return this._borderColor;
-    }
 
     public set borderColor(value:string) {
-        this.SVGCircle.style.stroke = value;
-        this._borderColor = value;
-    }
+        (<SVGCircleElement>this.SVGElement).style.stroke = value;
+      }
 
-
-    public get alpha():number {
-        return this._alpha;
-    }
 
     public set alpha(value:number) {
-        this.SVGCircle.style.opacity = <string><any>value;
-        this._alpha = value;
+        (<SVGCircleElement>this.SVGElement).style.opacity = <string><any>value;
     }
 
 
-    public get canvas():SVGElement {
-        return this._canvas;
-    }
-
-    public set canvas(value:SVGElement) {
-        this._canvas = value;
-    }
 
 
-    public get speedX():number {
-        return this._speedX;
-    }
-
-    public set speedX(value:number) {
-        this._speedX = value;
-    }
-
-    public get speedY():number {
-        return this._speedY;
-    }
-
-    public set speedY(value:number) {
-        this._speedY = value;
-    }
 
 
-    public get width():number {
-        return this._width;
-    }
-
-    public set width(value:number) {
-        this._width = value;
-    }
-
-    public get height():number {
-        return this._height;
-    }
-
-    public set height(value:number) {
-        this._height = value;
-    }
 }
 
 

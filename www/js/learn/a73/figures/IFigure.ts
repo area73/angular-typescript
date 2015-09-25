@@ -13,9 +13,11 @@ export interface IFigure {
     speedX:number;
     speedY:number;
     canvas:SVGElement;
+    centX:number;
+    centY:number;
 
-    setSize(...rest:number[]);
-    setPos(x:number, y:number);
-    move(x:number , y:number);
-    // constructor(canvas:SVGElement);
+    setSize(...rest:number[]):void;
+    setPos(x:number, y:number):void;
+    move(x:number , y:number):void;
+
 }

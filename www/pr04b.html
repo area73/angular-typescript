@@ -7,19 +7,29 @@
 </head>
 <body>
 
+
 <script src="js/system.js"></script>
+
 <script>
     System.defaultJSExtensions = true;
     // set our baseURL reference path
     System.config({
-        baseURL: './js'
+        baseURL: './js',
+
+        transpiler: 'typescript',
+
+        typescriptOptions: {
+
+        }
+
     });
 
     // loads /js/main.js
-    System.import('main.js').then(function(m) {
+    System.import('main.js').then(function (m) {
         console.log("aplicación cargada")
     });
 </script>
 
 </body>
 </html>
+
