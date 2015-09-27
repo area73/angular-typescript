@@ -12,12 +12,15 @@
  * 2) Casting
  * 3) Autocompetado
  *
- *
- * TODO
-     var c1:SVGCircleElement = <any>document.getElementById('c1');
-     var c2:SVGCircleElement = <any>document.getElementById('c2');
-     var l1:SVGLineElement = <any>document.getElementById('l1');
  */
+
+
+
+
+ // TODO
+ // var c1:SVGCircleElement = <any>document.getElementById('c1');
+ // var c2:SVGCircleElement = <any>document.getElementById('c2');
+ // var l1:SVGLineElement = <any>document.getElementById('l1');
 
 
 /**
@@ -26,24 +29,25 @@
  *
  * @learn
  * 1) Autocompletado --> atributos
- * 2) Mostrar d.ts
-
- TODO
- function run(circle1:SVGCircleElement, circle2:SVGCircleElement, l1:SVGLineElement):void {
-
-    circle1.cx.baseVal.value += 10;
-    circle1.cy.baseVal.value += 8;
-
-    circle2.cx.baseVal.value += 7;
-    circle2.cy.baseVal.value -= 5;
-
-    l1.x1.baseVal.value = circle1.cx.baseVal.value;
-    l1.y1.baseVal.value = circle1.cy.baseVal.value;
-    l1.x2.baseVal.value = circle2.cx.baseVal.value;
-    l1.y2.baseVal.value = circle2.cy.baseVal.value;
-
-    }
+ * 2) Mostrar d.t
  */
+
+
+ // TODO
+ //function run(circle1:SVGCircleElement, circle2:SVGCircleElement, l1:SVGLineElement):void {
+ //
+ //   circle1.cx.baseVal.value += 10;
+ //   circle1.cy.baseVal.value += 8;
+ //
+ //   circle2.cx.baseVal.value += 7;
+ //   circle2.cy.baseVal.value -= 5;
+ //
+ //   l1.x1.baseVal.value = circle1.cx.baseVal.value;
+ //   l1.y1.baseVal.value = circle1.cy.baseVal.value;
+ //   l1.x2.baseVal.value = circle2.cx.baseVal.value;
+ //   l1.y2.baseVal.value = circle2.cy.baseVal.value;
+ //   }
+
 
 
 /**
@@ -52,17 +56,13 @@
  *
  * @learn
  * setInterval
- * fat arrow TS Style ES6?
+  */
 
- TODO
- setInterval(function () {
-    run(c1, c2, l1)
- }, 100)
+ //TODO
+ //setInterval(function () {
+ //   run(c1, c2, l1)
+ //}, 100)
 
- //TS
- // setInterval(()=>{moveCicle(c1);},100);
-
- */
 
 
 

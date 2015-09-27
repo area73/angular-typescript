@@ -6,3 +6,8 @@ La intención es crear un archivo TS que compile en JS y que los cículos se mue
 Este primer archivo va a ser una programación no OOP
 
  
+## Temas a tratar
+* tipado estático de las variables (objetos SVGCircleElement y tipos básicos any)
+* Casting
+* Autocompetado
+* [definition types](https://github.com/borisyankov/DefinitelyTyped) 
