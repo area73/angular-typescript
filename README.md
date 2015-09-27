@@ -1,5 +1,8 @@
-# angular-typescript
-Charla demostración Typescript:
+## Descripción de la rama
+Creación de una clase padre para las figuras interactivas
+
+## Temas a tratar
+* Herencia
+
  
-El proyecto está dividido en "branches".
- Cada branch toca un tema a desarrolla sobre Typescript
+ 
