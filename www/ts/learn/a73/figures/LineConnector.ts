@@ -5,10 +5,7 @@
 /// <reference path="./Ball.ts" />
 
 
-
-import {IFigure} from './IFigure';
-
-
+import {Ball} from './Ball';
 
 
 export class LineConnector {
@@ -18,7 +15,7 @@ export class LineConnector {
     private _color:string;
     private _refreshTime:number = 30;
 
-    constructor(private _b1:IFigure, private _b2:IFigure) {
+    constructor(private _b1:Ball, private _b2:Ball) {
         this.createLine();
         this.linkLine();
         this.startWatch();
@@ -32,8 +29,6 @@ export class LineConnector {
         this.b1.canvas.appendChild(this._SVGLine);
         this.SVGLine.style.strokeWidth = '1';
         this.color = '#666666'
-
-
     }
 
     private linkLine():void {
@@ -41,10 +36,10 @@ export class LineConnector {
     }
 
     private linkNodes() {
-        this.SVGLine.x1.baseVal.value = <any>this.b1.centX;
-        this.SVGLine.y1.baseVal.value = <any>this.b1.centY;
-        this.SVGLine.x2.baseVal.value = <any>this.b2.centX;
-        this.SVGLine.y2.baseVal.value = <any>this.b2.centY;
+        this.SVGLine.x1.baseVal.value = <any>this.b1.x;
+        this.SVGLine.y1.baseVal.value = <any>this.b1.y;
+        this.SVGLine.x2.baseVal.value = <any>this.b2.x;
+        this.SVGLine.y2.baseVal.value = <any>this.b2.y;
     }
 
 
@@ -52,25 +47,24 @@ export class LineConnector {
         setInterval(
             () => {
                 this.linkNodes();
-            },this._refreshTime)
+            }, this._refreshTime)
     }
 
 
-
-    public get b1():IFigure {
+    public get b1():Ball {
         return this._b1;
     }
 
-    public set b1(value:IFigure) {
+    public set b1(value:Ball) {
         this._b1 = value;
     }
 
 
-    public get b2():IFigure {
+    public get b2():Ball {
         return this._b2;
     }
 
-    public set b2(value:IFigure) {
+    public set b2(value:Ball) {
         this._b2 = value;
     }
 

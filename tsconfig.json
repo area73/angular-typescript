@@ -4,6 +4,7 @@
     "watch": true,
     "removeComments": true,
     "outDir": "www/js",
-    "target": "ES5"
+    "target": "ES5",
+    "module": "amd"
   }
 }
