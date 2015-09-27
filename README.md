@@ -6,3 +6,5 @@ Creación de clases extra y funciones globales
 * métodos publicos / pivados
 * ámbito de las varialbes (fat arrow)
 
+ 
+ 
