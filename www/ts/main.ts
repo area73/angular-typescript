@@ -7,11 +7,11 @@
  *
  * @description
  *
- * creamos 2 clases nuevas triangulo y rectangulo
- * Al final veremos que tenemos un problema para utilizar el conector en las nuevas figuras
+ * @description
+ * Vamos a crear interface para las figuras
  *
  * @learn
- * utilización de clases
+ * Creación de interfaces
  *
  */
 
