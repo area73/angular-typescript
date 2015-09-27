@@ -1,9 +1,11 @@
 /**
- * Created by rerades on 30/8/15.
+ * @description
+ * Asignamos la clase Ball al paquete learn.a73.figures
  */
 
+// TODO
 module learn.a73.figures {
-
+    // TODO
     export class Ball {
 
         private _radius:number = 10;
@@ -30,8 +32,6 @@ module learn.a73.figures {
             this.borderWidth = borderWidth;
             this.alpha = alpha;
         }
-
-
 
 
         public get radius():number {
