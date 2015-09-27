@@ -5,12 +5,14 @@
 
 /**
  *
- * Creamos interface para las figuras
+ * @description
+ * Vamos a crear interface para las figuras
  *
  * creamos 2 clases nuevas triangulo y rectangulo
  *
  * cambiamos los parámetros de LineConnector para que acepte un Interface en vez de una clase específica
  *
+ * @learn
  *
  */
 
@@ -29,7 +31,8 @@ import {InteractiveObject} from './learn/a73/figures/InteractiveObject';
 
 var canvas:SVGElement = <SVGElement>document.createElementNS("http://www.w3.org/2000/svg", "svg");
 canvas.id = 'canvas';
-document.body.appendChild(canvas);
+var wrapper = document.getElementById('wrapper');
+wrapper.appendChild(canvas);
 
 
 var lastCircle:Circle;
