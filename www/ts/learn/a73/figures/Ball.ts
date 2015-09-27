@@ -2,6 +2,14 @@
  * Created by rerades on 30/8/15.
  */
 
+/**
+ * @description
+ * Clase Ball extraida de la anterior rama
+ *
+ * @learn
+ * 1) Creación de la clase Ball
+ */
+
 
 
 class Ball {
