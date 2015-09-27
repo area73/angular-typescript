@@ -1,2 +1,4 @@
 # angular-typescript
-Charla demostración Typescript / Angular 2
+Charla demostración Typescript 
+
+
