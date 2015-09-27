@@ -4,18 +4,14 @@
 
 
 /**
+ *  @description
  *  Creamos el método move
  *
  *  @learn
- *  fat arrow ámbito de las varialbes
- *
- *
- *
+ *  1) fat arrow ámbito de las varialbes
  */
 
 
-    // truco:: no hacer el export de la clase aquí sino al final del archivo  (con --module system no funciona)
-    //export class Ball {
 export class Ball {
 
     private _radius:number = 10;
@@ -47,36 +43,44 @@ export class Ball {
         this.alpha = alpha;
     }
 
-
-    public move(speedX:number, speedY:number){
+    // TODO: 1
+    public move(speedX:number, speedY:number) {
         this._speedX = speedX;
         this._speedY = speedY;
         this.startToMove();
     }
 
+    // TODO: 2 (probar en el navegador)
     private startToMove():void {
-        /*
-        setInterval(
-            function(){
-            console.log(this._x)
-        }, 100)
-        */
+
+        //setInterval(
+        //    function () {
+        //        this.x = this.x + this.speedX;
+        //        this.y = this.y + this.speedY;
+        //        console.log(this._x)
+        //    }, 100)
+
 
         setInterval(
             () => {
-                // console.log(this._x)
+                // TODO
                 this.checkBounce();
                 this.x = this.x + this.speedX;
                 this.y = this.y + this.speedY;
-
+                // console.log(this._x)
             }, 30)
+
+    }
+
+    // TODO: 3 (probar en el navegador)
+    private checkBounce():void {
+        this.speedX = (this.x > this._canvas.clientWidth || this.x < 0) ? this.speedX * -1 : this.speedX;
+        this.speedY = (this.y > this._canvas.clientHeight || this.y < 0 ) ? this.speedY * -1 : this.speedY;
     }
 
 
-    private checkBounce():void {
-        this.speedX = (this.x > this._canvas.clientWidth || this.x < 0) ? this.speedX * -1 : this.speedX  ;
-        this.speedY = (this.y > this._canvas.clientHeight || this.y < 0 ) ? this.speedY * -1 : this.speedY  ;
-}
+    // SETTERS y GETTERS
+    // -----------------
 
     public get radius():number {
         return this._radius;
@@ -180,9 +184,6 @@ export class Ball {
         this._speedY = value;
     }
 }
-
-// export = Ball;
-
 
 
 

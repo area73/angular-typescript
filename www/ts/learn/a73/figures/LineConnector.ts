@@ -2,24 +2,20 @@
  * Created by rerades on 30/8/15.
  */
 
-/// <reference path="./Ball.ts" />
 
 
-import figure = require('./Ball');
+import {Ball as Circle} from './Ball';
 
-// alias
-import Ball = figure.Ball;
 
 export class LineConnector {
 
-
     private _SVGLine:SVGLineElement;
 
-    constructor(private _b1:Ball, private _b2:Ball) {
+    // TODO: declaración de parámetro como variable de clase
+    constructor(private _b1:Circle, private _b2:Circle) {
         this.createLine();
         this.linkLine();
         this.startWatch();
-
     }
 
 
@@ -53,21 +49,22 @@ export class LineConnector {
     }
 
 
-
-    public get b1():Ball {
+    // GETTERS Y SETTERS
+    // -----------------
+    public get b1():Circle {
         return this._b1;
     }
 
-    public set b1(value:Ball) {
+    public set b1(value:Circle) {
         this._b1 = value;
     }
 
 
-    public get b2():Ball {
+    public get b2():Circle {
         return this._b2;
     }
 
-    public set b2(value:Ball) {
+    public set b2(value:Circle) {
         this._b2 = value;
     }
 
