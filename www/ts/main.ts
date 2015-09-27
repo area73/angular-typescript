@@ -6,46 +6,41 @@
 /**
  *
  * Utilizamos módulos para identificar de forma inequívoca nuestras clases
- *
  *  [MODULOS EXTERNOS]
- *  [commonJS ]
+ *  [commonJS, AMD, UMD, System ]
  *
- *  To use ES6 modules in the browser you currently need to include a module loader such as RequireJS or SystemJS or use a bundling tool such as Browserify.
- *
+ *  To use ES6 modules in the browser you currently need to include a module loader such as RequireJS or SystemJS
+ *  or use a bundling tool such as Browserify.
  *
  * Vamos a utilizar Systemjs --> https://github.com/systemjs/systemjs
  *
  *  ejecutamos desde el raiz del proyecto : npm install systemjs
  *
- *
  * copiamos del systemjs/dist --> system.js a nuestra raiz y lo referenciamos en el HTML
  *
  * Y hacenos la carga del main utilizanod system
  *
- *
- *
  * Podemos eliminar ---> /// <reference path="learn/a73/figures/Ball.ts" />
- *
- *
- *
- *
- *
  *
  * Here is how to chose which one is right for you:
 
- Want the package on NPM : --module commonjs
- Only want to use the code in the browser : --module amd
- Want to deploy the code on NPM and use it in the browser without any dependency on something (like requirejs, webpack or browserify etc). : --module umd
- Ready for the promised future of a truly unified and ECMA approved module system : --module system
- I recommend that for new projects you just use --module system. But it is good to be aware of this compiler option.
+ -. Want the package on NPM : --module commonjs
+ -. Only want to use the code in the browser : --module amd
+ -. Want to deploy the code on NPM and use it in the browser without any dependency
+    on something (like requirejs, webpack or browserify etc). : --module umd
+ -. Ready for the promised future of a truly unified and ECMA approved module system : --module system
+
+ *
  *
  */
 
 
 var canvas:SVGElement = <SVGElement>document.createElementNS("http://www.w3.org/2000/svg", "svg");
 canvas.id = 'canvas';
-document.body.appendChild(canvas);
+var wrapper = document.getElementById('wrapper');
+wrapper.appendChild(canvas);
 
+// TODO: esto ya no se hace OJO !!! ---> ahora import {}
 import figure = require('./learn/a73/figures/Ball');
 
 for (var i:number = 0; i < 1500 ; i++) {

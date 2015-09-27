@@ -9,7 +9,7 @@
  *
  *  // si exportamos la clase el problema que tenemos es que
     // para instanciarla tendrmeos que hacer algo parecido a m:Ball.Ball = new Ball.Ball()
-    // para solucionar esto ponemos el export al final del archivo y no a la clase
+    // para solucionar esto podríamos poner el export al final del archivo y no a la clase
 
 
 
