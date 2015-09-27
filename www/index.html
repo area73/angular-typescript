@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+
+<div id="wrapper">
+
+</div>
+
+<script src="js/system.js"></script>
+
+<script>
+    System.defaultJSExtensions = true;
+    // set our baseURL reference path
+    System.config({
+        baseURL: './js',
+
+        transpiler: 'typescript',
+
+        typescriptOptions: {
+
+        }
+
+    });
+
+    // loads /js/main.js
+    System.import('main.js').then(function (m) {
+        console.log("aplicación cargada")
+    });
+</script>
+
+</body>
+</html>
+

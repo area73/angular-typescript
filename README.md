@@ -1,5 +1,8 @@
-# angular-typescript
-Charla demostración Typescript:
+## Descripción de la rama
+Creación de un interface para englobar las figuras
+
+## Temas a tratar
+* creación de interfaces
+
  
-El proyecto está dividido en "branches".
- Cada branch toca un tema a desarrolla sobre Typescript
+ 
