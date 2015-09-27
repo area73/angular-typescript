@@ -2,6 +2,8 @@
   "compilerOptions": {
     "sourceMap": true,
     "watch": true,
-    "removeComments": true
+    "removeComments": true,
+    "outDir": "www/js",
+    "target": "ES5"
   }
 }
