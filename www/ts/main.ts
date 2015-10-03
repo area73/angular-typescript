@@ -6,7 +6,7 @@
 /**
  * @description
  * Creamos la clase LineConnector y
- * añadimos más funcionalidades a Ball (move, rebounce)
+ * añadimos más funcionalidades a Ball (move, rebound)
  *  creamos métodos globales de ayuda (utils)
  * mostramos posibilidades de tipos de uniones
  *
