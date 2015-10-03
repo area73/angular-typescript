@@ -8,12 +8,23 @@
  * @description
  *
  * @description
- * Vamos a crear una clase padre y las clases hijas
+ * Utilización de componentes de terceros
  *
  * @learn
- * Creación de interfaces
- * 1) InteractiveObject
+ * Utilización de archivo sde definición d.ts
+ * http://definitelytyped.org/
+ * http://definitelytyped.org/tsd/
+ * https://github.com/borisyankov/DefinitelyTyped
  *
+ * 1) mirar en http://definitelytyped.org/tsd/
+ *
+ * 2) vamos a utilizar Toaster (toastr)
+ * https://github.com/CodeSeven/toastr
+ *
+ * 3) DESPUÉS DE INSTALAR TSD
+ * tsd toastr --resolve  (para las dependencias)
+ *
+ * 4) implementación en InteractiveObject
  */
 
 

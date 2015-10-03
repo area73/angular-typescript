@@ -35,7 +35,21 @@ export class InteractiveObject implements IFigure {
         var canvasNS = canvas.namespaceURI;
         this._SVGElement = document.createElementNS(canvasNS, svgElName);
         canvas.appendChild(this._SVGElement);
+        this.setListeners()
     }
+
+
+    private setListeners() {
+        this._SVGElement.addEventListener( 'click',  this.onClickEv);
+    }
+
+    private onClickEv(ev:MouseEvent):void {
+        toastr.info(ev.target.toString(), 'FIGURA PRESIONADA');
+        toastr.options.newestOnTop = true;
+        toastr.options.progressBar = true;
+    }
+
+
 
     public setPos(x:number, y:number):void {
         this.x = x;
